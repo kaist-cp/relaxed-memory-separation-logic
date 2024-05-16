@@ -1,0 +1,290 @@
+# Search paths for all packages. They must all match the regex
+# `-Q $PACKAGE[/ ]` so that we can filter out the right ones for each package.
+-Q orc11 orc11
+-Q gpfsl gpfsl
+-Q gpfsl-examples gpfsl.examples
+# silence coq_makefile warning
+-docroot gpfsl
+# We sometimes want to locally override notation, and there is no good way to do that with scopes.
+-arg -w -arg -notation-overridden
+# Cannot use non-canonical projections as it causes massive unification failures
+# (https://github.com/coq/coq/issues/6294).
+-arg -w -arg -redundant-canonical-projection
+
+# ORC11
+orc11/base.v
+orc11/value.v
+orc11/mem_order.v
+orc11/event.v
+orc11/location.v
+orc11/view.v
+orc11/memory.v
+orc11/tview.v
+orc11/thread.v
+orc11/progress.v
+orc11/weak_lat_solver.v
+
+
+# Language Definitions
+gpfsl/lang/lang.v
+gpfsl/lang/notation.v
+gpfsl/lang/tactics.v
+
+# CMRAs
+gpfsl/algebra/lat_auth.v
+gpfsl/algebra/to_agree.v
+gpfsl/algebra/lattice_cmra.v
+
+# Based Logic with Views
+## Ghost Constructions
+gpfsl/base_logic/history_cmra.v
+## Extra Semantics Properties
+gpfsl/base_logic/memory.v
+## View-predicates
+gpfsl/base_logic/bi.v
+gpfsl/base_logic/vprop.v
+gpfsl/base_logic/frame_instances.v
+## Instantiation
+gpfsl/base_logic/history.v
+gpfsl/base_logic/weakestpre.v
+gpfsl/base_logic/adequacy.v
+gpfsl/base_logic/local_preds.v
+gpfsl/base_logic/na.v
+gpfsl/base_logic/meta_data.v
+gpfsl/base_logic/base_lifting.v
+gpfsl/base_logic/iwp.v
+
+
+# Surface-level Logic
+gpfsl/logic/relacq.v
+gpfsl/logic/lifting.v
+gpfsl/logic/proofmode.v
+## Invariants
+gpfsl/logic/na_invariants.v
+gpfsl/logic/invariants.v
+gpfsl/logic/view_invariants.v
+gpfsl/logic/subj_invariants.v
+gpfsl/logic/sc_invariants.v
+## Logical Atomic Triples
+gpfsl/logic/atomic_update.v
+gpfsl/logic/logatom.v
+## Atomic Points-to
+gpfsl/logic/atomic_cmra.v
+gpfsl/logic/atomic_ghost.v
+gpfsl/logic/atomic_preds.v
+gpfsl/logic/atomic_ops.v
+gpfsl/logic/atomic_ops_vj.v
+gpfsl/logic/atomics.v
+## Derived Constructs
+gpfsl/logic/readonly_ptsto.v
+gpfsl/logic/repeat_loop.v
+gpfsl/logic/for_loop.v
+gpfsl/logic/new_delete.v
+gpfsl/logic/atomic_exchange.v
+gpfsl/logic/diverge.v
+gpfsl/logic/arith.v
+
+## Diaframe stuff
+gpfsl/diaframe/vprop_weakestpre.v
+gpfsl/diaframe/vprop_weakestpre_logatom.v
+gpfsl/diaframe/atom_spec_notation.v
+gpfsl/diaframe/spec_notation.v
+gpfsl/diaframe/base_specs.v
+gpfsl/diaframe/omo_specs.v
+gpfsl/diaframe/omo_hints.v
+gpfsl/diaframe/base_hints.v
+gpfsl/diaframe/inv_hints.v
+gpfsl/diaframe/proof_automation.v
+gpfsl/diaframe/lattice_hints.v
+gpfsl/diaframe/view_hints.v
+gpfsl/diaframe/mono_list_hints.v
+gpfsl/diaframe/ghost_map_hints.v
+
+# GPS protocols
+## Model
+gpfsl/gps/block_ends.v
+gpfsl/gps/cbends.v
+gpfsl/gps/cmras.v
+gpfsl/gps/model_defs.v
+gpfsl/gps/model_rules_init.v
+gpfsl/gps/model_rules_dealloc.v
+gpfsl/gps/model_rules_read.v
+gpfsl/gps/model_rules_write.v
+gpfsl/gps/model_rules_cas.v
+gpfsl/gps/model.v
+## Middleware Rules
+gpfsl/gps/middleware_SW.v
+gpfsl/gps/middleware_PP.v
+gpfsl/gps/middleware.v
+gpfsl/gps/protocols.v
+## Surface Rules
+gpfsl/gps/escrows.v
+gpfsl/gps/surface_iSP.v
+gpfsl/gps/surface_vSP.v
+gpfsl/gps/surface_iPP.v
+gpfsl/gps/surface.v
+
+# Examples
+gpfsl-examples/sflib.v
+gpfsl-examples/uniq_token.v
+gpfsl-examples/nat_tokens.v
+gpfsl-examples/map_seq.v
+gpfsl-examples/list_helper.v
+gpfsl-examples/loc_helper.v
+gpfsl-examples/set_helper.v
+gpfsl-examples/big_op.v
+gpfsl-examples/gset_disj.v
+gpfsl-examples/algebra/mono_list_list.v
+gpfsl-examples/algebra/mono_list.v
+gpfsl-examples/algebra/set.v
+gpfsl-examples/algebra/saved_vprop.v
+
+## Event
+gpfsl-examples/event/event.v
+gpfsl-examples/event/ghost.v
+## Event History
+gpfsl-examples/history/history.v
+gpfsl-examples/history/ghost.v
+gpfsl-examples/history/spec.v
+## Event Graph
+gpfsl-examples/graph/map_helper.v
+gpfsl-examples/graph/graph.v
+gpfsl-examples/graph/graph_extend.v
+gpfsl-examples/graph/ghost.v
+gpfsl-examples/graph/spec.v
+## OMO
+gpfsl-examples/omo/omo_event.v
+gpfsl-examples/omo/omo_history.v
+gpfsl-examples/omo/omo.v
+gpfsl-examples/omo/omo_preds.v
+gpfsl-examples/omo/append_only_loc.v
+gpfsl-examples/omo/omo_preds_diaframe.v
+## Message-Passing
+gpfsl-examples/mp/code.v
+gpfsl-examples/mp/spec.v
+gpfsl-examples/mp/proof_gps.v
+gpfsl-examples/mp/proof_reclaim_gps.v
+gpfsl-examples/mp/proof_gen_inv.v
+## Locks
+gpfsl-examples/lock/code_ticket_lock.v
+gpfsl-examples/lock/code_spin_lock.v
+gpfsl-examples/lock/spec_lock.v
+gpfsl-examples/lock/spec_lock_history.v
+gpfsl-examples/lock/spec_trylock_history.v
+gpfsl-examples/lock/spec_trylock_composition.v
+gpfsl-examples/lock/proof_ticket_lock_gps.v
+# gpfsl-examples/lock/proof_spin_lock.v
+# gpfsl-examples/lock/proof_spin_lock_diaframe.v
+gpfsl-examples/lock/proof_spin_lock_trylock_history.v
+gpfsl-examples/lock/proof_spin_lock_trylock_history_diaframe.v
+gpfsl-examples/lock/proof_spin_lock_trylock_composition.v
+gpfsl-examples/lock/proof_omo_client.v
+## Circular Buffer
+gpfsl-examples/circ_buff/code.v
+gpfsl-examples/circ_buff/code_na.v
+gpfsl-examples/circ_buff/proof_gps.v
+## Stack
+gpfsl-examples/stack/spec_na.v
+gpfsl-examples/stack/spec_per_elem.v
+gpfsl-examples/stack/event.v
+gpfsl-examples/stack/stack_event_omo.v
+gpfsl-examples/stack/spec_graph.v
+gpfsl-examples/stack/spec_history.v
+gpfsl-examples/stack/spec_treiber_composition.v
+gpfsl-examples/stack/spec_treiber_composition_diaframe.v
+gpfsl-examples/stack/spec_elim_composition.v
+gpfsl-examples/stack/spec_elim_composition_diaframe.v
+gpfsl-examples/stack/spec_history_old.v
+gpfsl-examples/stack/spec_abs.v
+gpfsl-examples/stack/code_na.v
+gpfsl-examples/stack/code_treiber.v
+gpfsl-examples/stack/code_elimination.v
+gpfsl-examples/stack/code_elim.v
+gpfsl-examples/stack/proof_na.v
+gpfsl-examples/stack/proof_treiber_gps.v
+gpfsl-examples/stack/proof_treiber_graph.v
+gpfsl-examples/stack/proof_treiber_history.v
+gpfsl-examples/stack/proof_treiber_composition.v
+gpfsl-examples/stack/proof_treiber_history_old.v
+gpfsl-examples/stack/proof_history_abs.v
+gpfsl-examples/stack/proof_treiber_history_diaframe.v
+gpfsl-examples/stack/proof_treiber_composition_diaframe.v
+gpfsl-examples/stack/proof_mp_client_graph.v
+gpfsl-examples/stack/proof_mp_client_history.v
+gpfsl-examples/stack/proof_elim_graph.v
+gpfsl-examples/stack/proof_elim_graph_closed.v
+gpfsl-examples/stack/proof_elim_history.v
+gpfsl-examples/stack/proof_elim_composition.v
+gpfsl-examples/stack/proof_omo_client.v
+gpfsl-examples/stack/proof_elim_composition_diaframe.v
+## Queue
+gpfsl-examples/queue/spec_per_elem.v
+gpfsl-examples/queue/event.v
+gpfsl-examples/queue/spec_graph.v
+gpfsl-examples/queue/spec_abs.v
+gpfsl-examples/queue/spec_abs_graph.v
+gpfsl-examples/queue/spec_spsc.v
+gpfsl-examples/queue/spec_history.v
+gpfsl-examples/queue/spec_composition.v
+gpfsl-examples/queue/code_ms.v
+gpfsl-examples/queue/code_ms_tailcas.v
+gpfsl-examples/queue/code_hw.v
+gpfsl-examples/queue/code_producer_consumer.v
+gpfsl-examples/queue/proof_ms_gps.v
+gpfsl-examples/queue/proof_abs_graph_abs.v
+gpfsl-examples/queue/proof_abs_graph_graph.v
+gpfsl-examples/queue/proof_hw_graph.v
+gpfsl-examples/queue/proof_per_elem_graph.v
+gpfsl-examples/queue/proof_mp_graph.v
+gpfsl-examples/queue/proof_mp2_graph.v
+gpfsl-examples/queue/proof_ms_abs_graph.v
+gpfsl-examples/queue/proof_ms_history.v
+gpfsl-examples/queue/proof_ms_history_diaframe.v
+gpfsl-examples/queue/proof_ms_composition.v
+gpfsl-examples/queue/proof_ms_closed.v
+gpfsl-examples/queue/proof_spsc_graph.v
+gpfsl-examples/queue/proof_producer_consumer.v
+gpfsl-examples/queue/proof_sequential_client.v
+## Chase-Lev Double-ended Queue
+gpfsl-examples/chase_lev/code.v
+## Exchanger
+gpfsl-examples/exchanger/code.v
+gpfsl-examples/exchanger/code_split.v
+gpfsl-examples/exchanger/spec_graph.v
+gpfsl-examples/exchanger/spec_graph_piggyback.v
+gpfsl-examples/exchanger/spec_graph_resource.v
+# gpfsl-examples/exchanger/spec_history.v
+gpfsl-examples/exchanger/spec_composition.v
+gpfsl-examples/exchanger/spec_composition_diaframe.v
+gpfsl-examples/exchanger/proof_graph_piggyback.v
+gpfsl-examples/exchanger/proof_graph.v
+gpfsl-examples/exchanger/proof_graph_resource.v
+gpfsl-examples/exchanger/proof_graph_resource_closed.v
+gpfsl-examples/exchanger/proof_composition.v
+gpfsl-examples/exchanger/proof_composition_diaframe.v
+gpfsl-examples/exchanger/proof_sequential_client.v
+gpfsl-examples/exchanger/proof_mp_client.v
+## Folly library
+gpfsl-examples/folly/code_turnSequencer.v
+gpfsl-examples/folly/code_singleElementQueue.v
+gpfsl-examples/folly/code_mpmcqueue.v
+gpfsl-examples/folly/spec_turnSequencer_history.v
+gpfsl-examples/folly/spec_turnSequencer_composition.v
+gpfsl-examples/folly/spec_singleElementQueue_history.v
+gpfsl-examples/folly/spec_singleElementQueue_composition.v
+gpfsl-examples/folly/spec_mpmcqueue_history.v
+gpfsl-examples/folly/spec_mpmcqueue_composition.v
+gpfsl-examples/folly/proof_turnSequencer_history.v
+gpfsl-examples/folly/proof_turnSequencer_composition.v
+gpfsl-examples/folly/proof_turnSequencer_composition_diaframe.v
+gpfsl-examples/folly/proof_singleElementQueue_history.v
+gpfsl-examples/folly/proof_singleElementQueue_composition.v
+gpfsl-examples/folly/proof_singleElementQueue_composition_diaframe.v
+gpfsl-examples/folly/proof_mpmcqueue_history.v
+gpfsl-examples/folly/proof_mpmcqueue_composition.v
+gpfsl-examples/folly/proof_mpmcqueue_composition_diaframe.v
+## Arc
+gpfsl-examples/arc/code.v
+gpfsl-examples/arc/spec_composition.v
+gpfsl-examples/arc/proof_composition.v
+gpfsl-examples/arc/proof_omo_client.v

@@ -1,0 +1,279 @@
+The following files are distributed under the terms of the 3-clause BSD
+license (https://opensource.org/licenses/BSD-3-Clause), included below.
+
+* All files under gpfsl-examples/omo/
+* gpfsl-examples/stack/code_elim.v
+* gpfsl-examples/stack/stack_event_omo.v
+* gpfsl-examples/stack/spec_history.v
+* gpfsl-examples/stack/spec_treiber_composition.v
+* gpfsl-examples/stack/spec_treiber_composition_diaframe.v
+* gpfsl-examples/stack/spec_elim_composition.v
+* gpfsl-examples/stack/spec_elim_composition_diaframe.v
+* gpfsl-examples/stack/proof_treiber_history.v
+* gpfsl-examples/stack/proof_treiber_composition.v
+* gpfsl-examples/stack/proof_treiber_composition_diaframe.v
+* gpfsl-examples/stack/proof_elim_history.v
+* gpfsl-examples/stack/proof_elim_composition.v
+* gpfsl-examples/stack/proof_elim_composition_diaframe.v
+* gpfsl-examples/stack/proof_omo_client.v
+* gpfsl-examples/lock/code_spin_lock.v
+* gpfsl-examples/lock/spec_lock.v
+* gpfsl-examples/lock/spec_trylock_history.v
+* gpfsl-examples/lock/spec_trylock_composition.v
+* gpfsl-examples/lock/proof_spin_lock.v
+* gpfsl-examples/lock/proof_spin_lock_diaframe.v
+* gpfsl-examples/lock/proof_spin_lock_trylock_history.v
+* gpfsl-examples/lock/proof_spin_lock_trylock_history_diaframe.v
+* gpfsl-examples/lock/proof_spin_lock_trylock_composition.v
+* gpfsl-examples/lock/proof_omo_client.v
+* gpfsl-examples/queue/code_ms_tailcas.v
+* gpfsl-examples/queue/spec_history.v
+* gpfsl-examples/queue/spec_composition.v
+* gpfsl-examples/queue/proof_ms_history.v
+* gpfsl-examples/queue/proof_ms_history_diaframe.v
+* gpfsl-examples/queue/proof_ms_composition.v
+* gpfsl-examples/folly/spec_turnSequencer_history.v
+* gpfsl-examples/folly/spec_turnSequencer_composition.v
+* gpfsl-examples/folly/spec_singleElementQueue_history.v
+* gpfsl-examples/folly/spec_singleElementQueue_composition.v
+* gpfsl-examples/folly/spec_mpmcqueue_history.v
+* gpfsl-examples/folly/spec_mpmcqueue_composition.v
+* gpfsl-examples/folly/proof_turnSequencer_history.v
+* gpfsl-examples/folly/proof_turnSequencer_composition.v
+* gpfsl-examples/folly/proof_turnSequencer_composition_diaframe.v
+* gpfsl-examples/folly/proof_singleElementQueue_history.v
+* gpfsl-examples/folly/proof_singleElementQueue_composition.v
+* gpfsl-examples/folly/proof_singleElementQueue_composition_diaframe.v
+* gpfsl-examples/folly/proof_mpmcqueue_history.v
+* gpfsl-examples/folly/proof_mpmcqueue_composition.v
+* gpfsl-examples/folly/proof_mpmcqueue_composition_diaframe.v
+* gpfsl-examples/exchanger/code_split.v
+* gpfsl-examples/exchanger/spec_composition.v
+* gpfsl-examples/exchanger/spec_composition_diaframe.v
+* gpfsl-examples/exchanger/proof_composition.v
+* gpfsl-examples/exchanger/proof_composition_diaframe.v
+* gpfsl-examples/arc/spec_composition.v
+* gpfsl-examples/arc/proof_composition.v
+* gpfsl-examples/arc/proof_omo_client.v
+* gpfsl-examples/algebra/saved_vprop.v
+* gpfsl/diaframe/base_hints.v
+* gpfsl/diaframe/base_specs.v
+* gpfsl/diaframe/ghost_map_hints.v
+* gpfsl/diaframe/lattice_hints.v
+* gpfsl/diaframe/mono_list_hints.v
+* gpfsl/diaframe/omo_hints.v
+* gpfsl/diaframe/omo_specs.v
+* gpfsl/diaframe/proof_automation.v
+* gpfsl/diaframe/view_hints.v
+* statistics.py
+* Dockerfile
+* README.md
+
+Copyright (c) 2024, KAIST Concurrency and Parallelism Laboratory
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+==============================================================================
+
+The following files are distributed under the terms of the 3-clause BSD
+license (https://opensource.org/licenses/BSD-3-Clause), included below.
+
+* gpfsl-examples/algebra/mono_list.v
+
+Copyright: Iris developers and contributors
+
+------------------------------------------------------------------------------
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * Neither the name of the copyright holder nor the names of its contributors
+      may be used to endorse or promote products derived from this software
+      without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+==============================================================================
+
+The following files are distributed under the terms of the 3-clause BSD
+license (https://opensource.org/licenses/BSD-3-Clause), included below.
+
+* gpfsl/diaframe/atom_spec_notation.v
+* gpfsl/diaframe/inv_hints.v
+* gpfsl/diaframe/notation_gen_atom_spec.py
+* gpfsl/diaframe/notation_gen_spec.py
+* gpfsl/diaframe/notation_lib.py
+* gpfsl/diaframe/other_tools_data.csv
+* gpfsl/diaframe/spec_notation.v
+* gpfsl/diaframe/vprop_weakestpre_logatom.v
+* gpfsl/diaframe/vprop_weakestpre.v
+
+BSD 3-Clause License
+
+Copyright (c) 2022, Diaframe developers and contributors
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+==============================================================================
+
+The following files are distributed under the terms of the BSD license,
+included below.
+
+* gpfsl-examples/algebra/set.v
+* gpfsl-examples/folly/code_turnSequencer.v
+* gpfsl-examples/folly/code_singleElementQueue.v
+* gpfsl-examples/folly/code_mpmcqueue.v
+
+Copyright: ReLoC developers and contributors
+
+------------------------------------------------------------------------------
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * Neither the name of the copyright holder nor the names of its contributors
+      may be used to endorse or promote products derived from this software
+      without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+==============================================================================
+
+The following files are distributed under the terms of the BSD license,
+included below.
+
+* gpfsl-examples/lock/comparison/lock.v
+* gpfsl-examples/arc/code.v
+* gpfsl-examples/arc/comparison/arc.v
+* gpfsl-examples/arc/comparison/arc_cmra.v
+
+Copyright: lambdaRust developers and contributors
+
+------------------------------------------------------------------------------
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * Neither the name of the copyright holder nor the names of its contributors
+      may be used to endorse or promote products derived from this software
+      without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+==============================================================================
+
+Unless noted otherwise, files in this development are distributed under
+the terms of the BSD license, included below.
+
+Copyright: GPFSL developers and contributors
+
+------------------------------------------------------------------------------
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * Neither the name of the copyright holder nor the names of its contributors
+      may be used to endorse or promote products derived from this software
+      without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

@@ -1,0 +1,18 @@
+opam-version: "2.0"
+maintainer: "Sunho Park <sunho.park@kaist.ac.kr>"
+authors: ["Sunho Park" "Jaewoo Kim" "Ike Mulder" "Jaehwang Jung" "Janggun Lee" "Robbert Krebbers" "Jeehoon Kang"]
+license: "BSD-3-Clause"
+version: "dev"
+
+synopsis: "A proof recipe for linearizability in relaxed memory separation logic"
+
+depends: [
+  "coq-iris"  { (= "dev.2023-03-26.0.bd74c1d9") | (= "dev") }
+  "coq-orc11" {= version}
+  "coq-gpfsl" {= version}
+  "coq-diaframe" { = "dev.2023-11-09.1.3fb3d7ca" }
+  "coq-hammer" {= "1.3.2+8.16"}
+]
+
+build: ["./make-package" "omo" "-j%{jobs}%"]
+install: ["./make-package" "omo" "install"]

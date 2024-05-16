@@ -1,0 +1,68 @@
+image: ralfjung/opam-ci:opam2
+
+stages:
+  - build
+
+variables:
+  CPU_CORES: "10"
+  OCAML: "ocaml-variants.4.14.0+options ocaml-option-flambda"
+
+.template: &template
+  stage: build
+  tags:
+  - fp
+  script:
+  - git clone https://gitlab.mpi-sws.org/iris/ci.git ci -b opam2
+  - ci/buildjob
+  cache:
+    key: "$CI_JOB_NAME"
+    paths:
+    - _opam/
+  only:
+  - master@iris/gpfsl
+  - /^ci/@iris/gpfsl
+  except:
+  - triggers
+  - schedules
+  - api
+
+## Build jobs
+
+build-coq.8.15.1:
+  <<: *template
+  variables:
+    OPAM_PINS: "coq version 8.15.1"
+    DENY_WARNINGS: "1"
+    OPAM_PKG: "1"
+  tags:
+  - fp-timing
+
+trigger-iris.timing:
+  <<: *template
+  variables:
+    OPAM_PINS: "coq version 8.15.1   git+https://gitlab.mpi-sws.org/$IRIS_REPO#$IRIS_REV"
+  tags:
+  - fp-timing
+  only:
+  - triggers
+  - schedules
+  - api
+  except:
+    variables:
+    - $TIMING_AD_HOC_ID == null
+
+trigger-iris.dev:
+  <<: *template
+  variables:
+    STDPP_REPO: "iris/stdpp"
+    IRIS_REPO: "iris/iris"
+    ORC11_REPO: "iris/orc11"
+    OPAM_PINS: "coq version 8.16.dev   git+https://gitlab.mpi-sws.org/$STDPP_REPO#$STDPP_REV   git+https://gitlab.mpi-sws.org/$IRIS_REPO#$IRIS_REV   git+https://gitlab.mpi-sws.org/$ORC11_REPO#$ORC11_REV"
+  except:
+  only:
+    refs:
+    - triggers
+    - schedules
+    - api
+    variables:
+    - $TIMING_AD_HOC_ID == null
