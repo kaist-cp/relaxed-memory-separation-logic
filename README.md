@@ -1,6 +1,6 @@
 # A Proof Recipe for Linearizability in Relaxed Memory Separation Logic (COQ DEVELOPMENT)
 
-This is the formalization for the paper "A Proof Recipe for Linearizability in Relaxed Memory Separation Logic".
+This is the formalization for the paper "A Proof Recipe for Linearizability in Relaxed Memory Separation Logic," done on top of [iRC11] relaxed memory separation logic.
 
 > Sunho Park, Jaewoo Kim, Ike Mulder, Jaehwang Jung, Janggun Lee, Robbert Krebbers, and Jeehoon Kang. 2024. A Proof Recipe for Linearizability in Relaxed Memory Separation Logic. Proc. ACM Program. Lang. 8, PLDI, Article 154 (June 2024), 24 pages. https://doi.org/10.1145/3656384
 
