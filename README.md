@@ -89,8 +89,6 @@ and you can safely ignore some proof files without causing any problems.
 The line counts in the paper are obtained by counting proof lines of the files specified in the table from `Proof.` (or `Next Obligation.`) to `Qed.` (exclusive), excluding empty lines or comments.
 These can be counted automatically by using a python script [statistics.py](statistics.py).
 
-Note that several case studies (exchanger, elimination stack, Arc) that do not appear on submitted paper will be included in the revised version after finalizing the work (especially applying Diaframe).
-
 1. These proofs are forked from the work by Dang et al.<sup>3)</sup> but we made some modifications on them. In particular, as we simplified the ORC11 semantics a little (see below for more detail), these proofs became shorter than the original.
 2. Hoang-Hai Dang, Jacques-Henri Jourdan, Jan-Oliver Kaiser, and Derek Dreyer. 2019. RustBelt Meets Relaxed Memory. Proc. ACM Program. Lang. 4, POPL, Article 34 (dec 2019), 29 pages. https://doi.org/10.1145/3371102
 3. Hoang-Hai Dang, Jaehwang Jung, Jaemin Choi, Duc-Than Nguyen, William Mansky, Jeehoon Kang, and Derek Dreyer. 2022. Compass: Strong and Compositional Library Specifications in Relaxed Memory Separation Logic. In Proceedings of the 43rd ACM SIGPLAN International Conference on Programming Language Design and Implementation (San Diego, CA, USA) (PLDI 2022). Association for Computing Machinery, New York, NY, USA, 792–808. https://doi.org/10.1145/3519939.3523451
@@ -284,7 +282,7 @@ For more information, please refer to the [repository of Diaframe](https://gitla
 ## Change in Semantics
 
 This project is built upon [iRC11], a separation logic for the ORC11 memory model.
-For better support for automation, we simplified the semantics of ORC11 that does not change the core part of the memory model, which are explained below. Note that we did not touch the race detector of ORC11.
+For better support for automation, we simplified the semantics of ORC11 that does not change the core part of the memory model, explained below. Note that we did not touch the race detector of ORC11.
 - The comparison of two locations with different addresses [can be true if either one of them is deallocated](https://gitlab.mpi-sws.org/iris/gpfsl/-/blob/fdf1fcba85da1df81b3e1b632763b87c95336ec0/gpfsl/lang/lang.v#L223-228).
   This leads to complexity in the CAS rule where we need to check the liveness of each location stored in location history before performing the CAS.
   We believe this semantics creates complexities orthogonal to our work, hence have removed it.

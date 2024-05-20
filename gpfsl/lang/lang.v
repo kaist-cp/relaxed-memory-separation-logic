@@ -226,9 +226,9 @@ Module base.
       z1 ≠ z2 → lit_neq (LitInt z1) (LitInt z2)
   | LocNeq l1 l2 :
       l1 ≠ l2 → lit_neq (LitLoc l1) (LitLoc l2)
-  | LocNeqNullR z l :
+  | LocNeqIntR z l :
       lit_neq (LitLoc l) (LitInt z)
-  | LocNeqNullL z l :
+  | LocNeqIntL z l :
       lit_neq (LitInt z) (LitLoc l).
 
   (* Condition for non-UB comparison *)
